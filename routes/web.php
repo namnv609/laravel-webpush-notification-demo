@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "HomesController@index");
+
+/**
+ * Session routes
+ */
 Route::get("/login", function() {
     return view("sessions/index");
 });
