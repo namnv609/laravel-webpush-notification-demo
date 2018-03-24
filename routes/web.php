@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/login", function() {
+    return view("sessions/index");
+});
+Route::post("/login", "SessionsController@doLogin");
+Route::get("/logout", "SessionsController@doLogout");
+
+/**
+ * Admin routes
+ */
+Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["admin"]], function() {
+    Route::get("/", "AdminsController@index");
+});
