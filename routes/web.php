@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', "HomesController@index");
+Route::get("/", "HomesController@index");
+Route::get("/posts/{id}", "PostsController@post")->where("id", "^[0-9]+$");
 
 /**
  * Session routes

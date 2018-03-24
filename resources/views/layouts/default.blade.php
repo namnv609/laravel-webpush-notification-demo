@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Laravel Webpush Notification</title>
+        <title>@yield("title", "Laravel Webpush Notification")</title>
         <!-- Bootstrap core CSS -->
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
@@ -46,7 +46,7 @@
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="site-heading">
                             <h1>Demo Blog</h1>
-                            <span class="subheading">Laravel Webpush Notification</span>
+                            <span class="subheading">@yield("title", "Laravel Webpush Notification")</span>
                         </div>
                     </div>
                 </div>
