@@ -1,1 +1,1 @@
-<a href="/logout">Logout</a>
+@extends("layouts.admin")
