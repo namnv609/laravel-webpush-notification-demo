@@ -28,4 +28,12 @@ Route::get("/logout", "SessionsController@doLogout");
  */
 Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["admin"]], function() {
     Route::get("/", "AdminsController@index");
+    /**
+     * Category routes
+     */
+    Route::group(["prefix" => "categories"], function() {
+        Route::get("/", "CategoriesController@index");
+        Route::get("/new", "CategoriesController@create");
+        Route::post("/new", "CategoriesController@doCreate");
+    });
 });
