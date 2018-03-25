@@ -36,4 +36,13 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["adm
         Route::get("/new", "CategoriesController@create");
         Route::post("/new", "CategoriesController@doCreate");
     });
+
+    /**
+     * Post routes
+     */
+    Route::group(["prefix" => "posts"], function() {
+        Route::get("/", "PostsController@index");
+        Route::get("new", "PostsController@create");
+        Route::post("new", "PostsController@doCreate");
+    });
 });

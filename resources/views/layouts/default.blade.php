@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>@yield("title", "Laravel Webpush Notification")</title>
+        <link rel="manifest" href="/manifest.json">
         <!-- Bootstrap core CSS -->
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
@@ -14,6 +15,26 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <!-- Custom styles for this template -->
         <link href="/css/clean-blog.min.css" rel="stylesheet">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                appId: "{{ env("ONESIGNAL_APP_ID") }}",
+                autoRegister: false,
+                notifyButton: {
+                    enable: true
+                },
+                promptOptions: {
+                    siteName: "Laravel Webpush Notification",
+                    actionMessage: "Bạn có muốn nhận thông báo khi chúng tôi có tin mới hay không?",
+                    acceptButtonText: "ĐỒNG Ý",
+                    cancelButtonText: "KHÔNG, CẢM ƠN",
+                }
+            }]);
+            OneSignal.push(function() {
+                OneSignal.showHttpPrompt();
+            });
+        </script>
     </head>
     <body>
         <!-- Navigation -->
